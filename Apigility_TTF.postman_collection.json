@@ -1,0 +1,71 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Apigility TTF",
+		"_postman_id": "9e0a4226-6358-ee86-9c01-140ef670f5ff",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/mapping/base",
+			"request": {
+				"url": "http://localhost:8080/mapping/base",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"A\": true,\n\t\"B\": true,\n\t\"C\": false,\n\t\"D\": 15,\n\t\"E\": 7,\n\t\"F\": 2\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mapping/spec1",
+			"request": {
+				"url": "http://localhost:8080/mapping/spec1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"A\": true,\n\t\"B\": true,\n\t\"C\": true,\n\t\"D\": 15,\n\t\"E\": 7,\n\t\"F\": 2\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mapping/spec2",
+			"request": {
+				"url": "http://localhost:8080/mapping/spec2",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"A\": true,\n\t\"B\": true,\n\t\"C\": true,\n\t\"D\": 15,\n\t\"E\": 7,\n\t\"F\": 2\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

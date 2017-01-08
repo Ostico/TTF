@@ -1,6 +1,8 @@
 <?php
 namespace TTF\V1\Rpc\Mapping;
 
+use TTF\V1\Rpc\Mapping\Commons\MappingPhase1;
+use TTF\V1\Rpc\Mapping\Commons\MappingPhase2;
 use TTF\V1\Rpc\Mapping\Commons\MappingPhases;
 use Zend\Json\Json;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -20,9 +22,16 @@ class MappingController extends AbstractActionController
         try {
 
             $params = Json::decode( $this->getRequest()->getContent() );
+
+            /**
+             * @var MappingPhase1 $mapper1
+             */
             $mapper1 = MappingFactory::get( $this->params( 'mapType' ), MappingPhases::PHASE1 );
             $mapper1->configure( $params );
 
+            /**
+             * @var MappingPhase2 $mapper2
+             */
             $mapper2 = MappingFactory::get( $this->params( 'mapType' ), MappingPhases::PHASE2 );
             $mapper2->configure( $params );
             $mapper2->attach( $mapper1 );

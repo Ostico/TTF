@@ -9,10 +9,18 @@
 namespace TTF\V1\Rpc\Mapping;
 
 
+use TTF\V1\Rpc\Mapping\Commons\MapInterface;
 use TTF\V1\Rpc\Mapping\Exceptions\ClassNotFoundException;
 
 class MappingFactory {
 
+    /**
+     * @param $mapType
+     * @param $phase
+     *
+     * @return MapInterface
+     * @throws ClassNotFoundException
+     */
     public static function get( $mapType, $phase ){
         $mapType = ucfirst( $mapType );
         $class = '\\TTF\\V1\\Rpc\\Mapping\\' . $mapType . '\\Map' . $phase;

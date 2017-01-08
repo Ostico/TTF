@@ -27,14 +27,14 @@ abstract class MappingPhase1 implements MapInterface {
     protected $C;
 
     public function getValue(){
-        if( $this->checkSType() ) return EnumType::S;
-        elseif( $this->checkRType() ) return EnumType::R;
+        if( $this->checkRType() ) return EnumType::R;
+        elseif( $this->checkSType() ) return EnumType::S;
         elseif( $this->checkTType() ) return EnumType::T;
         else throw new InvalidContextException( "Provided context is not valid." );
     }
 
-    abstract public function checkSType();
     abstract public function checkRType();
+    abstract public function checkSType();
     abstract public function checkTType();
 
     /**

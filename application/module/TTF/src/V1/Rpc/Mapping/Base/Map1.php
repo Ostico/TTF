@@ -16,13 +16,13 @@ use TTF\V1\Rpc\Mapping\Commons\MappingPhase1;
  */
 class Map1 extends MappingPhase1 {
 
-    public function checkSType() {
-        if( $this->A && $this->B && !$this->C ) return true;
+    public function checkRType() {
+        if( $this->A && $this->B && $this->C ) return true;
         return false;
     }
 
-    public function checkRType() {
-        if( $this->A && $this->B && $this->C ) return true;
+    public function checkSType() {
+        if( $this->A && $this->B && !$this->C ) return true;
         return false;
     }
 

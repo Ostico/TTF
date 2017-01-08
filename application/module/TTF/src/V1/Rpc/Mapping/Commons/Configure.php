@@ -10,7 +10,7 @@ namespace TTF\V1\Rpc\Mapping\Commons;
 
 use stdClass;
 
-trait MagicSet {
+trait Configure {
 
     public function configure( stdClass $params ){
         foreach( $params as $key => $value ){

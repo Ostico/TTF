@@ -19,7 +19,7 @@ use ZF\ApiProblem\Exception\InvalidArgumentException;
  */
 abstract class MappingPhase2 implements MapInterface {
 
-    use MagicSet;
+    use Configure;
 
     protected $D;
     protected $E;

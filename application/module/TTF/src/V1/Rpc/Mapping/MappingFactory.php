@@ -23,7 +23,7 @@ class MappingFactory {
      */
     public static function get( $mapType, $phase ){
         $mapType = ucfirst( $mapType );
-        $class = '\\TTF\\V1\\Rpc\\Mapping\\' . $mapType . '\\Map' . $phase;
+        $class = __NAMESPACE__ . '\\' . $mapType . '\\Map' . $phase;
         if( class_exists( $class, true ) ){
             return new $class();
         }

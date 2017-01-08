@@ -1,0 +1,25 @@
+version: '2'
+
+networks:
+  apigility-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.3.0/24
+          ip_range: 172.18.3.0/24
+          gateway: 172.18.3.1
+
+services:
+
+  ttf:
+    build: ./
+    container_name: docker_ttf
+    environment:
+      XDEBUG_CONFIG: 192.168.1.1
+
+    volumes:
+      - ~/PhpstormProjects/Apigility/application:/var/www:rw
+    ports:
+      - 8080:80
+    networks:
+       - apigility-network
